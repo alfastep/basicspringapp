@@ -1,4 +1,4 @@
-# basicspringapp
+# Basic Spring Application
 
 This is a basic Spring application for managing books and authors.
 
@@ -31,10 +31,35 @@ Open your web browser and navigate to `http://localhost:8080` to access the appl
 
 The application uses an in-memory H2 database by default. If you want to configure a different database or modify any other application settings, you can update the `application.properties` file located in the `src/main/resources` directory.
 
+## Functionality
+
+The application provides the following functionalities:
+
+- **Book Management**: Allows you to create, read, update, and delete books.
+- **Author Management**: Allows you to create, read, update, and delete authors.
+
+## Model Classes
+
+The application includes the following model classes:
+
+- `Book`: Represents a book with properties such as `id`, `title`, and `author`.
+- `Author`: Represents an author with properties such as `id`, `name`, and `books`.
+
+## Repository Classes
+
+The repository classes handle the data access for books and authors:
+
+- `BookRepository`: Provides methods for performing CRUD (Create, Read, Update, Delete) operations on books. Extends the Spring Data JPA `JpaRepository`.
+- `AuthorRepository`: Provides methods for performing CRUD operations on authors. Extends the Spring Data JPA `JpaRepository`.
+
+## Controller Classes
+
+The controller classes handle the HTTP requests and map them to the appropriate methods:
+
+- `BookController`: Handles the book-related requests, including displaying the list of books, creating a new book, updating an existing book, and deleting a book.
+- `AuthorController`: Handles the author-related requests, including displaying the list of authors, creating a new author, updating an existing author, and deleting an author.
+
+
 ## Contributing
 
 Contributions to this project are welcome. If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
