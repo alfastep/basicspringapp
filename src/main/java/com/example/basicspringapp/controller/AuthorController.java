@@ -47,7 +47,7 @@ public class AuthorController {
         return "redirect:/authors";
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/{id}/edit")
     public String showUpdateForm(@PathVariable("id") Long id, Model model) {
         Author author = authorRepository.findById(id).orElse(null);
         model.addAttribute("author", author);
@@ -64,7 +64,7 @@ public class AuthorController {
         return "redirect:/authors";
     }
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/{id}/delete")
     public String deleteAuthor(@PathVariable("id") Long id) {
         authorRepository.deleteById(id);
         return "redirect:/authors";

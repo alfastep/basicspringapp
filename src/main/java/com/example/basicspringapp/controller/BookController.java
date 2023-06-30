@@ -51,7 +51,7 @@ public class BookController {
         return "redirect:/books";
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/{id}/edit")
     public String showUpdateForm(@PathVariable("id") Long id, Model model) {
         Book book = bookRepository.findById(id).orElse(null);
         List<Author> authors = authorRepository.findAll();
@@ -74,7 +74,7 @@ public class BookController {
         return "redirect:/books";
     }
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/{id}/delete")
     public String deleteBook(@PathVariable("id") long id) {
         bookRepository.deleteById(id);
         return "redirect:/books";
